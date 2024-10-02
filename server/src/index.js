@@ -13,11 +13,14 @@ const app = express();
 dotenv.config();
 
 
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-})
+const corsOptions = {
+  origin: 'https://invo-sync.vercel.app', // allow requests from your frontend
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // allowed methods
+  credentials: true, // allow cookies or authentication headers
+  optionsSuccessStatus: 200 // some legacy browsers choke on 204
+};
+
+app.use(cors(corsOptions));
 console.log("first")
 app.use(express.json());
 app.use(cookieParser());

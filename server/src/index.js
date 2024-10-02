@@ -23,10 +23,10 @@ connectDB();
 
 const port = process.env.PORT;
 
-app.use("/api/v1/data", randomDataRouter);
-app.use("/api/v1/auth", authRouter);
-app.use("/api/v1/analytics", analyticsRouter);
-app.use("/api/v1/invoice", invoiceRouter);
+app.use("/data", randomDataRouter);
+app.use("/auth", authRouter);
+app.use("/analytics", analyticsRouter);
+app.use("/invoice", invoiceRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

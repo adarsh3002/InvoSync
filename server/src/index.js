@@ -23,6 +23,12 @@ connectDB();
 
 const port = process.env.PORT;
 
+app.get("/",(req,res)=>{
+  res.send({
+    api:"your backend is running"
+  })
+})
+
 app.use("/data", randomDataRouter);
 app.use("/auth", authRouter);
 app.use("/analytics", analyticsRouter);

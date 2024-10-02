@@ -21,6 +21,9 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+
+// For preflight requests
+app.options('*', cors(corsOptions));
 console.log("first")
 app.use(express.json());
 app.use(cookieParser());

@@ -33,10 +33,10 @@ app.get("/",(req,res)=>{
   })
 })
 
-app.use("/data", randomDataRouter);
-app.use("/auth", authRouter);
-app.use("/analytics", analyticsRouter);
-app.use("/invoice", invoiceRouter);
+app.use("/data",cors(), randomDataRouter);
+app.use("/auth",cors(), authRouter);
+app.use("/analytics",cors(), analyticsRouter);
+app.use("/invoice",cors(), invoiceRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

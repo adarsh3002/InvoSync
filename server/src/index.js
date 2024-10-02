@@ -8,18 +8,18 @@ import authRouter from "./routes/auth.router.js";
 import invoiceRouter from "./routes/invoice.router.js";
 import analyticsRouter from "./routes/analytics.router.js";
 import PDFDocument from "pdfkit-table";
+console.log("first0")
 const app = express();
 dotenv.config();
-app.use(
-  cors({
-    origin: "http://localhost:3000",
-    credentials: true,
-  })
-);
+
+
+app.use(cors())
+console.log("first")
 app.use(express.json());
 app.use(cookieParser());
 
 connectDB();
+
 
 const port = process.env.PORT;
 

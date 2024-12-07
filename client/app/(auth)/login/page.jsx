@@ -19,6 +19,7 @@ import { toast } from "sonner";
 import Link from "next/link";
 import { Users } from "lucide-react";
 import Cookies from "js-cookie";
+import Image from "next/image";
 export default function Login() {
   const router = useRouter();
   const form = useForm({
@@ -55,7 +56,13 @@ export default function Login() {
     }
   }
   return (
-    <div className="border rounded-lg w-full max-w-3xl mx-5 p-10 bg-card grid md:grid-cols-2 grid-cols-1 md:gap-5 gap-10">
+    <div className="w-full h-screen flex  justify-cente items-center">
+<div className=" h-screen w-1/2 bg-red-400/50 max-lg:hidden ">
+  {/* <Image alt="Login Image" height={100} width={100} src=""/> */}
+</div>
+    <div className="border rounded-lg w-full max-w-3xl mx-5 p-10 bg-card grid md:grid-cols-2 grid-cols-1 md:gap-5 gap-10 h-fit">
+
+
       <div className="w-full h-full">
         <Users size={40} />
         <h1 className="text-4xl font-bold mt-5">Login</h1>
@@ -117,6 +124,10 @@ export default function Login() {
           </Link>
         </p>
       </div>
+  
+
     </div>
+    </div>
+
   );
 }

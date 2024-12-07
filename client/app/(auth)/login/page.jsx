@@ -1,5 +1,7 @@
 "use client";
 import React from "react";
+import loginImage from '@/lib/login.png'; // Assuming this is where your image is stored
+
 import { useForm } from "react-hook-form";
 import { loginSchema } from "@/schemas/zodSchema";
 import { useRouter } from "next/navigation";
@@ -57,8 +59,8 @@ export default function Login() {
   }
   return (
     <div className="w-full h-screen flex  justify-cente items-center">
-<div className=" h-screen w-1/2 bg-red-400/50 max-lg:hidden ">
-  {/* <Image alt="Login Image" height={100} width={100} src=""/> */}
+<div className=" h-screen w-1/2 bg-red-400/0 max-lg:hidden flex justify-center items-center ">
+<Image alt="Login Image" height={800} width={800} src={loginImage} />
 </div>
     <div className="border rounded-lg w-full max-w-3xl mx-5 p-10 bg-card grid md:grid-cols-2 grid-cols-1 md:gap-5 gap-10 h-fit">
 
